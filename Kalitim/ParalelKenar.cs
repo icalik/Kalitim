@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kalitim
 {
-    public class ParalelKenar
+    public class ParalelKenar : Dikdortgen
     {
         private bool Yon;
 

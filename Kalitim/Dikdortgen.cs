@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kalitim
 {
-    public class Dikdortgen
+    public class Dikdortgen : Sekiller
     {
         private double Yukseklik;
         private double Genislik;

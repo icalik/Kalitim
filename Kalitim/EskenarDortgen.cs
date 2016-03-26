@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kalitim
 {
-    public class EskenarDortgen
+    public class EskenarDortgen : Dikdortgen
     {
         public EskenarDortgen(bool yon)
         {

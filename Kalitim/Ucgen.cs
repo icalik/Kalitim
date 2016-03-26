@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Kalitim
 {
-    public class Ucgen
+    public class Ucgen : Sekiller
     {
         private double Kenar;
 
