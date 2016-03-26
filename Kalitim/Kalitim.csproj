@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Dikdortgen.cs" />
     <Compile Include="EskenarDortgen.cs" />
+    <Compile Include="ParalelKenar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sekiller.cs" />
