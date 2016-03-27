@@ -21,12 +21,12 @@ namespace Kalitim
 
         public void setKenar(double kenar)
         {
-            throw new System.NotImplementedException();
+            Kenar = kenar;
         }
 
         public double getKenar()
         {
-            throw new System.NotImplementedException();
+            return Kenar;
         }
     }
 }

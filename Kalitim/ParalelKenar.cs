@@ -31,12 +31,12 @@ namespace Kalitim
 
         public bool getYon()
         {
-            throw new System.NotImplementedException();
+            return Yon;
         }
 
         public void setYon(bool yon)
         {
-            throw new System.NotImplementedException();
+            Yon = yon;
         }
     }
 }

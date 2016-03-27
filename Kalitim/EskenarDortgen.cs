@@ -24,7 +24,9 @@ namespace Kalitim
 
         public EskenarDortgen()
         {
-            throw new System.NotImplementedException();
+
         }
+        
+       
     }
 }

@@ -22,22 +22,22 @@ namespace Kalitim
 
         public void setYukseklik(double yukseklik)
         {
-            throw new System.NotImplementedException();
+            Yukseklik = yukseklik;
         }
 
         public double getYukseklik()
         {
-            throw new System.NotImplementedException();
+            return Yukseklik;
         }
 
         public void setGenislik(double genislik)
         {
-            throw new System.NotImplementedException();
+            Genislik = genislik;
         }
 
         public double getGenislik()
         {
-            throw new System.NotImplementedException();
+            return Genislik;
         }
     }
 }
