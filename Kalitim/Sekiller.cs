@@ -13,47 +13,46 @@ namespace Kalitim
 
         public Sekiller(char sembol)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public Sekiller(char sembol, bool doluMu)
         {
-            throw new System.NotImplementedException();
         }
 
         public Sekiller()
         {
-            throw new System.NotImplementedException();
+
         }
 
         public void setSembol(char sembol)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public char getSembol()
         {
-            throw new System.NotImplementedException();
+            return Sembol;
         }
 
         public void setDoluMu(bool doluMu)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public bool getDolumu()
         {
-            throw new System.NotImplementedException();
+            return DoluMu;
         }
 
         private void setOlusturmaTarihi(DateTime tarih)
         {
-            throw new System.NotImplementedException();
+
         }
 
         public DateTime getOlusturmaTarihi()
         {
-            throw new System.NotImplementedException();
+            return OlusturmaTarihi;
         }
 
         public abstract double AlanHesapla();

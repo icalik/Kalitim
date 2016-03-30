@@ -11,12 +11,12 @@ namespace Kalitim
 
         public Ucgen(double kenar)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public Ucgen()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void setKenar(double kenar)
@@ -27,6 +27,26 @@ namespace Kalitim
         public double getKenar()
         {
             return Kenar;
+        }
+
+        public override double AlanHesapla()
+        {
+            return Kenar;
+        }
+
+        public override double CevreHesapla()
+        {
+            return Kenar * 3;
+        }
+
+        public override void Ciz()
+        {
+            
+        }
+
+        public override void OzellikYazdir()
+        {
+           
         }
     }
 }

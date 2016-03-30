@@ -12,12 +12,12 @@ namespace Kalitim
 
         public Dikdortgen(double yukseklik, double genislik)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public Dikdortgen()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void setYukseklik(double yukseklik)
@@ -35,9 +35,28 @@ namespace Kalitim
             Genislik = genislik;
         }
 
+        public override double AlanHesapla()
+        {
+            return Genislik * Yukseklik;
+        }
+        public override double CevreHesapla()
+        {
+            return (Genislik + Yukseklik) * 2;
+        }
+        
+       
         public double getGenislik()
         {
             return Genislik;
+        }
+
+        public override void Ciz()
+        {
+        }
+
+        public override void OzellikYazdir()
+        {
+            
         }
     }
 }
