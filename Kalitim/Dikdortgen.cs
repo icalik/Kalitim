@@ -12,12 +12,12 @@ namespace Kalitim
 
         public Dikdortgen(double yukseklik, double genislik)
         {
-            
+
         }
 
         public Dikdortgen()
         {
-            
+
         }
 
         public void setYukseklik(double yukseklik)
@@ -43,8 +43,8 @@ namespace Kalitim
         {
             return (Genislik + Yukseklik) * 2;
         }
-        
-       
+
+
         public double getGenislik()
         {
             return Genislik;
@@ -56,7 +56,7 @@ namespace Kalitim
 
         public override void OzellikYazdir()
         {
-            
+
         }
     }
 }

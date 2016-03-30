@@ -2,12 +2,12 @@
 
 namespace Kalitim
 {
+
     class Program
     {
 
 
-
-       public  void Menu()
+        public static void Menu()
         {
             int secim = 0;
             string[] secenekler = { "Dikdortgen", "Ucgen", "EskenarDortgen", "Paralelkenar", "Cikis" };
@@ -21,8 +21,8 @@ namespace Kalitim
                 case 1:
                     Console.Clear();
                     Console.WriteLine("---Dikdortgen---");
-                    Program d1 = new Program();
-                    d1.DikdortgenMenu();
+
+                    DikdortgenMenu();
                     break;
                 case 2:
                     Console.Clear();
@@ -49,22 +49,22 @@ namespace Kalitim
 
         }
 
-        private void ParalelKenarMenu() //Paralelkenar icin menu yordami
+        public void ParalelKenarMenu() //Paralelkenar icin menu yordami
         {
             throw new NotImplementedException();
         }
 
-        private void EskenarDortgenMenu() //Eskenardortgen icin menu yordami
+        public void EskenarDortgenMenu() //Eskenardortgen icin menu yordami
         {
             throw new NotImplementedException();
         }
 
-        private void UcgenMenu() //Ucgen icin menu yordami
+        public void UcgenMenu() //Ucgen icin menu yordami
         {
             throw new NotImplementedException();
         }
 
-        public void DikdortgenMenu() //Dikdortgen icin menu yordami
+        public static void DikdortgenMenu() //Dikdortgen icin menu yordami
         {
             int secim = 0;
             string[] secenekler = {
@@ -86,11 +86,12 @@ namespace Kalitim
             switch (secim)
             {
                 case 1:
-
-                    Console.WriteLine(d.AlanHesapla());
-
-                    Console.WriteLine(d.getYukseklik());
-                    Console.WriteLine(d.getGenislik());
+                    Dikdortgen d1 = new Dikdortgen();
+                    d1.setGenislik(5);
+                    d1.setYukseklik(10);
+                    Console.WriteLine(d1.AlanHesapla());
+                    Console.WriteLine(d1.getYukseklik());
+                    Console.WriteLine(d1.getGenislik());
 
                     break;
                 case 2:
@@ -131,11 +132,18 @@ namespace Kalitim
 
         static void Main(string[] args)
         {
+
+            Program varsayilan = new Program();
+            varsayilanDegerler();
+            Menu();
+        }
+
+        public static void varsayilanDegerler()
+        {
             Dikdortgen d = new Dikdortgen();
             Ucgen u = new Ucgen();
             EskenarDortgen e = new EskenarDortgen();
             ParalelKenar p = new ParalelKenar();
-            Program varsayilan = new Program();
             //----Dikdortgen icin----
             d.setSembol('*');
             d.setDoluMu(true);
@@ -156,13 +164,6 @@ namespace Kalitim
             p.setYukseklik(5);
             p.setGenislik(5);
             p.setYon(true);
-
-            Menu();
         }
-
-        
-
-          
-        
     }
 }

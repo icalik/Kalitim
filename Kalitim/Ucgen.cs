@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Kalitim
 {
@@ -11,12 +8,12 @@ namespace Kalitim
 
         public Ucgen(double kenar)
         {
-            
+
         }
 
         public Ucgen()
         {
-            
+
         }
 
         public void setKenar(double kenar)
@@ -31,7 +28,7 @@ namespace Kalitim
 
         public override double AlanHesapla()
         {
-            return Kenar;
+            return Math.Sqrt(3) / 4 * Math.Pow(Kenar, 2);
         }
 
         public override double CevreHesapla()
@@ -41,12 +38,11 @@ namespace Kalitim
 
         public override void Ciz()
         {
-            
-        }
 
+        }
         public override void OzellikYazdir()
         {
-           
+
         }
     }
 }
