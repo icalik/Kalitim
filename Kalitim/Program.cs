@@ -5,28 +5,39 @@ namespace Kalitim
 
     class Program
     {
-
+        public static Dikdortgen d;
+        public static Ucgen u;
+        public static EskenarDortgen e;
+        public static ParalelKenar p;
 
         public static void Menu()
         {
-            int secim = 0;
+            byte secim = 0;
             string[] secenekler = { "Dikdortgen", "Ucgen", "EskenarDortgen", "Paralelkenar", "Cikis" };
             for (int i = 1; i <= secenekler.Length; i++)
             {
                 Console.WriteLine(i + "-) " + secenekler[i - 1]);
             }
-            secim = Convert.ToInt32(Console.ReadLine());
+            secim = Convert.ToByte(Console.ReadLine());
             switch (secim)
             {
                 case 1:
                     Console.Clear();
                     Console.WriteLine("---Dikdortgen---");
-
+                    Console.Write("DikDortgenin Genisligini Giriniz >> ");
+                    d.setGenislik(Convert.ToInt16(Console.ReadLine()));
+                    Console.Write("DikDortgenin Yuksekligini Giriniz >> ");
+                    d.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    Console.WriteLine();
                     DikdortgenMenu();
                     break;
                 case 2:
                     Console.Clear();
                     Console.WriteLine("---Ucgen---");
+                    Console.Write("Ucgenin Kenar Boyutunu Giriniz >> ");
+                    u.setKenar(Convert.ToInt16(Console.ReadLine()));
+                    Console.WriteLine();
+                    UcgenMenu();
                     break;
                 case 3:
                     Console.Clear();
@@ -39,7 +50,7 @@ namespace Kalitim
 
                     break;
                 case 5:
-                    Console.WriteLine("Byee..");
+                    Console.WriteLine("Cikis..");
                     Console.ReadLine();
                     break;
                 default:
@@ -48,22 +59,18 @@ namespace Kalitim
             }
 
         }
-
-        public void ParalelKenarMenu() //Paralelkenar icin menu yordami
+        public static void ParalelKenarMenu() //Paralelkenar icin menu yordami
         {
-            throw new NotImplementedException();
-        }
 
-        public void EskenarDortgenMenu() //Eskenardortgen icin menu yordami
+        }
+        public static void EskenarDortgenMenu() //Eskenardortgen icin menu yordami
         {
-            throw new NotImplementedException();
-        }
 
-        public void UcgenMenu() //Ucgen icin menu yordami
+        }
+        public static void UcgenMenu() //Ucgen icin menu yordami
         {
-            throw new NotImplementedException();
+            Console.WriteLine(u.AlanHesapla());
         }
-
         public static void DikdortgenMenu() //Dikdortgen icin menu yordami
         {
             int secim = 0;
@@ -86,31 +93,45 @@ namespace Kalitim
             switch (secim)
             {
                 case 1:
-                    Dikdortgen d1 = new Dikdortgen();
-                    d1.setGenislik(5);
-                    d1.setYukseklik(10);
-                    Console.WriteLine(d1.AlanHesapla());
-                    Console.WriteLine(d1.getYukseklik());
-                    Console.WriteLine(d1.getGenislik());
-
+                    Console.Clear();
+                    Console.WriteLine("Dikdortgenin Alani >>" + d.AlanHesapla());
+                    DikdortgenMenu();
                     break;
                 case 2:
-
+                    Console.Clear();
+                    Console.WriteLine("Dikdortgenin Cevresi >>" + d.CevreHesapla());
+                    DikdortgenMenu();
                     break;
                 case 3:
-
+                    Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
                     break;
                 case 4:
-
+                    Console.Clear();
+                    Console.WriteLine("Dikdortgenin Yeni Genisligini Giriniz >>");
+                    d.setGenislik(Convert.ToInt16(Console.ReadLine()));
+                    Console.WriteLine();
+                    DikdortgenMenu();
                     break;
                 case 5:
-
+                    Console.Clear();
+                    Console.WriteLine("Dikdortgenin Yeni Yuksekliginiz Giriniz >>");
+                    d.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    Console.WriteLine();
+                    DikdortgenMenu();
                     break;
                 case 6:
-
+                    Console.Clear();
+                    Console.WriteLine("Dikdortgenin Karakterini Giriniz >>");
+                    d.setSembol(Convert.ToChar(Console.ReadLine()));
+                    Console.WriteLine();
+                    DikdortgenMenu();
                     break;
                 case 7:
-
+                    Console.Clear();
+                    Console.WriteLine("Dikdortgenin Doluluk Tipini Giriniz >>");
+                    d.setDoluMu(Convert.ToBoolean(Console.ReadLine()));
+                    Console.WriteLine();
+                    DikdortgenMenu();
                     break;
                 case 8:
 
@@ -120,7 +141,7 @@ namespace Kalitim
                     Menu();
                     break;
                 case 10:
-                    Console.WriteLine("Byee..");
+                    Console.WriteLine("Cikis..");
                     Console.ReadLine();
                     break;
                 default:
@@ -128,22 +149,17 @@ namespace Kalitim
             }
 
         }
-
-
-        static void Main(string[] args)
+        static void Main(string[] args) //MAIN
         {
-
-            Program varsayilan = new Program();
             varsayilanDegerler();
             Menu();
         }
-
-        public static void varsayilanDegerler()
+        public static void varsayilanDegerler() //Varsayilan degerer atama
         {
-            Dikdortgen d = new Dikdortgen();
-            Ucgen u = new Ucgen();
-            EskenarDortgen e = new EskenarDortgen();
-            ParalelKenar p = new ParalelKenar();
+            d = new Dikdortgen();
+            u = new Ucgen();
+            e = new EskenarDortgen();
+            p = new ParalelKenar();
             //----Dikdortgen icin----
             d.setSembol('*');
             d.setDoluMu(true);
@@ -165,5 +181,7 @@ namespace Kalitim
             p.setGenislik(5);
             p.setYon(true);
         }
+
+
     }
 }
