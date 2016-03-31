@@ -24,7 +24,7 @@ namespace Kalitim
 
         public void setSembol(char sembol)
         {
-
+            Sembol = sembol;
         }
 
         public char getSembol()
@@ -34,7 +34,7 @@ namespace Kalitim
 
         public void setDoluMu(bool doluMu)
         {
-
+            DoluMu = doluMu;
         }
 
         public bool getDolumu()
@@ -42,9 +42,9 @@ namespace Kalitim
             return DoluMu;
         }
 
-        private void setOlusturmaTarihi(DateTime tarih)
+        public void setOlusturmaTarihi(DateTime tarih)
         {
-
+            OlusturmaTarihi = tarih;
         }
 
         public DateTime getOlusturmaTarihi()

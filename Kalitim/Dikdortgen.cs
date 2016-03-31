@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Kalitim
 {
     public class Dikdortgen : Sekiller
@@ -19,6 +15,7 @@ namespace Kalitim
         {
 
         }
+
 
         public void setYukseklik(double yukseklik)
         {
@@ -56,7 +53,13 @@ namespace Kalitim
 
         public override void OzellikYazdir()
         {
-
+            Console.WriteLine("Dikdortgenin Genisligi >> " + Genislik);
+            Console.WriteLine("Dikdortgenin Yuksekligi >> " + Yukseklik);
+            Console.WriteLine("Dikdortgenin Olusturma Tarihi >> " + getOlusturmaTarihi());
+            Console.WriteLine("Dikdortgenin Alani >> " + AlanHesapla());
+            Console.WriteLine("Dikdortgenin Cevresi >> " + CevreHesapla());
+            
         }
+
     }
 }

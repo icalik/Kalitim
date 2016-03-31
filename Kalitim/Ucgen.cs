@@ -42,7 +42,7 @@ namespace Kalitim
         }
         public override void OzellikYazdir()
         {
-
+     
             Console.WriteLine("Ucgenin Kenari >> " + Kenar);
             Console.WriteLine("Ucgenin Olusturma Tarihi >> " + getOlusturmaTarihi());
             Console.WriteLine("Ucgenin Alani >> " + AlanHesapla());
