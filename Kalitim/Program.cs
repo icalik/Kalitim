@@ -28,6 +28,7 @@ namespace Kalitim
                     d.setGenislik(Convert.ToInt16(Console.ReadLine()));
                     Console.Write("DikDortgenin Yuksekligini Giriniz >> ");
                     d.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    d.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
                     DikdortgenMenu();
                     break;
@@ -36,6 +37,7 @@ namespace Kalitim
                     Console.WriteLine("---Ucgen---");
                     Console.Write("Ucgenin Kenar Boyutunu Giriniz >> ");
                     u.setKenar(Convert.ToInt16(Console.ReadLine()));
+                    u.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
                     UcgenMenu();
                     break;
@@ -50,7 +52,7 @@ namespace Kalitim
 
                     break;
                 case 5:
-                    Console.WriteLine("Cikis..");
+                    Console.WriteLine("Byee..");
                     Console.ReadLine();
                     break;
                 default:
@@ -69,7 +71,85 @@ namespace Kalitim
         }
         public static void UcgenMenu() //Ucgen icin menu yordami
         {
-            Console.WriteLine(u.AlanHesapla());
+            int secim = 0;
+            string[] secenekler = {
+                "Alan Hesapla",
+                "Cevre Hesapla",
+                "Ciz",
+                "Kenar Degistir",
+                "Karekter Degistir",
+                "Dolumu Degistir",
+                "Bilgileri Yazdir",
+                "Ust Menu",
+                "Cikis"};
+            for (int i = 1; i <= secenekler.Length; i++)
+            {
+                Console.WriteLine(i + "-) " + secenekler[i - 1]);
+            }
+            secim = int.Parse(Console.ReadLine());
+            switch (secim)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("Ucgenin Alani >>" + u.AlanHesapla());
+                    UcgenMenu();
+                    break;
+                case 2:
+                    Console.Clear();
+                    Console.WriteLine("Ucgenin Cevresi >>" + u.CevreHesapla());
+                    UcgenMenu();
+                    break;
+                case 3:
+                    Console.Clear();
+                    Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
+                    UcgenMenu();
+                    break;
+                case 4:
+                    Console.Clear();
+                    Console.WriteLine("Ucgenin Yeni Kenarini Giriniz >>"); //Yeni Kenar
+                    u.setKenar(Convert.ToInt16(Console.ReadLine()));
+                    u.setOlusturmaTarihi(DateTime.Now);
+                    Console.WriteLine();
+                    UcgenMenu();
+
+                    break;
+
+                case 5:
+                    Console.Clear();
+                    Console.WriteLine("Ucgenin Karakterini Giriniz >>");
+                    u.setSembol(Convert.ToChar(Console.ReadLine()));
+                    Console.WriteLine();
+                    UcgenMenu();
+                    break;
+                case 6:
+                    Console.Clear();
+                    Console.WriteLine("Ucgenin Doluluk Tipini Giriniz >>");
+                    u.setDoluMu(Convert.ToBoolean(Console.ReadLine()));
+                    Console.WriteLine();
+                    UcgenMenu();
+                    break;
+                case 7:
+                    Console.Clear();//Bilgileri yazdirma
+                    Console.WriteLine("---Ucgen Bilgiler---");
+                    u.OzellikYazdir();
+                    Console.WriteLine(u.getDolumu());
+                    Console.WriteLine(u.getSembol());
+                    Console.WriteLine();
+                    UcgenMenu();
+                    break;
+                case 8:
+                    Console.Clear();
+                    Menu();
+                    break;
+                case 9:
+                    Console.WriteLine("Byee..");
+                    Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Yanlis secim!");
+                    Console.ReadLine();
+                    break;
+            }
         }
         public static void DikdortgenMenu() //Dikdortgen icin menu yordami
         {
@@ -103,19 +183,23 @@ namespace Kalitim
                     DikdortgenMenu();
                     break;
                 case 3:
+                    Console.Clear();
                     Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
+                    DikdortgenMenu();
                     break;
                 case 4:
                     Console.Clear();
-                    Console.WriteLine("Dikdortgenin Yeni Genisligini Giriniz >>");
+                    Console.WriteLine("Dikdortgenin Yeni Genisligini Giriniz >>"); //Yeni Genislik
                     d.setGenislik(Convert.ToInt16(Console.ReadLine()));
+                    d.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
                     DikdortgenMenu();
                     break;
                 case 5:
                     Console.Clear();
-                    Console.WriteLine("Dikdortgenin Yeni Yuksekliginiz Giriniz >>");
+                    Console.WriteLine("Dikdortgenin Yeni Yuksekliginiz Giriniz >>"); //Yeni Yukseklik
                     d.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    d.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
                     DikdortgenMenu();
                     break;
@@ -134,17 +218,25 @@ namespace Kalitim
                     DikdortgenMenu();
                     break;
                 case 8:
-
+                    Console.Clear();//Bilgileri yazdirma
+                    Console.WriteLine("---Dikdortgen Bilgiler---");
+                    d.OzellikYazdir();
+                    Console.WriteLine(d.getDolumu());
+                    Console.WriteLine(d.getSembol());
+                    Console.WriteLine();
+                    DikdortgenMenu();
                     break;
                 case 9:
                     Console.Clear();
                     Menu();
                     break;
                 case 10:
-                    Console.WriteLine("Cikis..");
+                    Console.WriteLine("Byee..");
                     Console.ReadLine();
                     break;
                 default:
+                    Console.WriteLine("Yanlis secim!");
+                    Console.ReadLine();
                     break;
             }
 
@@ -156,10 +248,10 @@ namespace Kalitim
         }
         public static void varsayilanDegerler() //Varsayilan degerer atama
         {
-            d = new Dikdortgen();
-            u = new Ucgen();
-            e = new EskenarDortgen();
-            p = new ParalelKenar();
+            d = new Dikdortgen(); //Dikdortgen object
+            u = new Ucgen(); //Ucgen object
+            e = new EskenarDortgen(); //EskenarDortgen object
+            p = new ParalelKenar(); //Paralelkenar object
             //----Dikdortgen icin----
             d.setSembol('*');
             d.setDoluMu(true);
