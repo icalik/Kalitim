@@ -53,11 +53,11 @@ namespace Kalitim
 
         public override void OzellikYazdir()
         {
-            Console.WriteLine("Dikdortgenin Genisligi >> " + Genislik);
-            Console.WriteLine("Dikdortgenin Yuksekligi >> " + Yukseklik);
-            Console.WriteLine("Dikdortgenin Olusturma Tarihi >> " + getOlusturmaTarihi());
-            Console.WriteLine("Dikdortgenin Alani >> " + AlanHesapla());
-            Console.WriteLine("Dikdortgenin Cevresi >> " + CevreHesapla());
+            Console.WriteLine("Genisligi >> " + Genislik);
+            Console.WriteLine("Yuksekligi >> " + Yukseklik);
+            Console.WriteLine("Olusturma Tarihi >> " + getOlusturmaTarihi());
+            Console.WriteLine("Alani >> " + AlanHesapla());
+            Console.WriteLine("Cevresi >> " + CevreHesapla());
             
         }
 

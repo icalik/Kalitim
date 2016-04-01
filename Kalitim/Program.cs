@@ -43,8 +43,14 @@ namespace Kalitim
                     break;
                 case 3:
                     Console.Clear();
-                    Console.WriteLine("---Eskenar Dortgen---");
-
+                    Console.WriteLine("---Eskenardortgen---");
+                    Console.Write("Eskenardortgenin Genisligini Giriniz >> ");
+                    e.setGenislik(Convert.ToInt16(Console.ReadLine()));
+                    Console.Write("Eskenardortgenin Yuksekligini Giriniz >> ");
+                    e.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    e.setOlusturmaTarihi(DateTime.Now);
+                    Console.WriteLine();
+                    EskenarDortgenMenu();
                     break;
                 case 4:
                     Console.Clear();
@@ -67,7 +73,92 @@ namespace Kalitim
         }
         public static void EskenarDortgenMenu() //Eskenardortgen icin menu yordami
         {
-
+            int secim = 0;
+            string[] secenekler = {
+                "Alan Hesapla",
+                "Cevre Hesapla",
+                "Ciz",
+                "Genislik Degistir",
+                "Uzunluk Degistir",
+                "Karekter Degistir",
+                "Dolumu Degistir",
+                "Bilgileri Yazdir",
+                "Ust Menu",
+                "Cikis"};
+            for (int i = 1; i <= secenekler.Length; i++)
+            {
+                Console.WriteLine(i + "-) " + secenekler[i - 1]);
+            }
+            secim = int.Parse(Console.ReadLine());
+            switch (secim)
+            {
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("Eskenardortgenin Alani >>" + e.AlanHesapla());
+                    EskenarDortgenMenu();
+                    break;
+                case 2:
+                    Console.Clear();
+                    Console.WriteLine("Eskenardortgenin Cevresi >>" + e.CevreHesapla());
+                    EskenarDortgenMenu();
+                    break;
+                case 3:
+                    Console.Clear();
+                    Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
+                    EskenarDortgenMenu();
+                    break;
+                case 4:
+                    Console.Clear();
+                    Console.WriteLine("Eskenardortgenin Yeni Genisligini Giriniz >>"); //Yeni Genislik
+                    e.setGenislik(Convert.ToInt16(Console.ReadLine()));
+                    e.setOlusturmaTarihi(DateTime.Now);
+                    Console.WriteLine();
+                    EskenarDortgenMenu();
+                    break;
+                case 5:
+                    Console.Clear();
+                    Console.WriteLine("Eskenardortgenin Yeni Yuksekliginiz Giriniz >>"); //Yeni Yukseklik
+                    e.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    e.setOlusturmaTarihi(DateTime.Now);
+                    Console.WriteLine();
+                    EskenarDortgenMenu();
+                    break;
+                case 6:
+                    Console.Clear();
+                    Console.WriteLine("Eskenardortgenin Karakterini Giriniz >>");
+                    e.setSembol(Convert.ToChar(Console.ReadLine()));
+                    Console.WriteLine();
+                    EskenarDortgenMenu();
+                    break;
+                case 7:
+                    Console.Clear();
+                    Console.WriteLine("Eskenardortgenin Doluluk Tipini Giriniz >>");
+                    e.setDoluMu(Convert.ToBoolean(Console.ReadLine()));
+                    Console.WriteLine();
+                    EskenarDortgenMenu();
+                    break;
+                case 8:
+                    Console.Clear();//Bilgileri yazdirma
+                    Console.WriteLine("---Eskenardortgen Bilgiler---");
+                    e.OzellikYazdir();
+                    Console.WriteLine(e.getDolumu());
+                    Console.WriteLine(e.getSembol());
+                    Console.WriteLine();
+                    EskenarDortgenMenu();
+                    break;
+                case 9:
+                    Console.Clear();
+                    Menu();
+                    break;
+                case 10:
+                    Console.WriteLine("Byee..");
+                    Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Yanlis secim!");
+                    Console.ReadLine();
+                    break;
+            }
         }
         public static void UcgenMenu() //Ucgen icin menu yordami
         {
@@ -111,9 +202,7 @@ namespace Kalitim
                     u.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
                     UcgenMenu();
-
                     break;
-
                 case 5:
                     Console.Clear();
                     Console.WriteLine("Ucgenin Karakterini Giriniz >>");
