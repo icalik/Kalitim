@@ -97,60 +97,65 @@ namespace Kalitim
             {
                 case 1:
                     Console.Clear();
-                    Console.WriteLine("Paralelkenar Alani >>" + e.AlanHesapla());
-                    EskenarDortgenMenu();
+                    Console.WriteLine("Paralelkenar Alani >>" + p.AlanHesapla());
+                    ParalelKenarMenu();
                     break;
                 case 2:
                     Console.Clear();
-                    Console.WriteLine("Paralelkenar Cevresi >>" + e.CevreHesapla());
-                    EskenarDortgenMenu();
+                    Console.WriteLine("Paralelkenar Cevresi >>" + p.CevreHesapla());
+                    ParalelKenarMenu();
                     break;
                 case 3:
                     Console.Clear();
                     Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
-                    EskenarDortgenMenu();
+                    ParalelKenarMenu();
                     break;
                 case 4:
                     Console.Clear();
                     Console.WriteLine("Paralelkenar Yeni Genisligini Giriniz >>"); //Yeni Genislik
-                    e.setGenislik(Convert.ToInt16(Console.ReadLine()));
-                    e.setOlusturmaTarihi(DateTime.Now);
+                    p.setGenislik(Convert.ToInt16(Console.ReadLine()));
+                    p.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
-                    EskenarDortgenMenu();
+                    ParalelKenarMenu();
                     break;
                 case 5:
                     Console.Clear();
                     Console.WriteLine("Paralelkenar Yeni Yuksekliginiz Giriniz >>"); //Yeni Yukseklik
-                    e.setYukseklik(Convert.ToInt16(Console.ReadLine()));
-                    e.setOlusturmaTarihi(DateTime.Now);
+                    p.setYukseklik(Convert.ToInt16(Console.ReadLine()));
+                    p.setOlusturmaTarihi(DateTime.Now);
                     Console.WriteLine();
-                    EskenarDortgenMenu();
+                    ParalelKenarMenu();
                     break;
                 case 6:
-
+                    Console.Clear();
+                    Console.WriteLine("Paralelkenar Yonunu Giriniz >>"); //Yeni Yon
+                    p.setYon(Convert.ToBoolean(Console.ReadLine()));
+                    p.setOlusturmaTarihi(DateTime.Now);
+                    Console.WriteLine();
+                    ParalelKenarMenu();
                     break;
                 case 7:
                     Console.Clear();
                     Console.WriteLine("Paralelkenar Karakterini Giriniz >>");
-                    e.setSembol(Convert.ToChar(Console.ReadLine()));
+                    p.setSembol(Convert.ToChar(Console.ReadLine()));
                     Console.WriteLine();
-                    EskenarDortgenMenu();
+                    ParalelKenarMenu();
                     break;
                 case 8:
                     Console.Clear();
                     Console.WriteLine("Paralelkenar Doluluk Tipini Giriniz >>");
-                    e.setDoluMu(Convert.ToBoolean(Console.ReadLine()));
+                    p.setDoluMu(Convert.ToBoolean(Console.ReadLine()));
                     Console.WriteLine();
-                    EskenarDortgenMenu();
+                    ParalelKenarMenu();
                     break;
                 case 9:
                     Console.Clear();//Bilgileri yazdirma
                     Console.WriteLine("---Paralelkenar Bilgiler---");
-                    e.OzellikYazdir();
-                    Console.WriteLine(e.getDolumu());
-                    Console.WriteLine(e.getSembol());
+                    p.OzellikYazdir();
+                    Console.WriteLine("Doluluk Durumu >>" + p.getDolumu());
+                    Console.WriteLine("Sembolu >> " + p.getSembol());
                     Console.WriteLine();
-                    EskenarDortgenMenu();
+                    ParalelKenarMenu();
                     break;
                 case 10:
                     Console.Clear();
@@ -189,7 +194,7 @@ namespace Kalitim
             {
                 case 1:
                     Console.Clear();
-                    Console.WriteLine("Eskenardortgenin Alani >>" + e.AlanHesapla());
+                    Console.WriteLine("Eskenardortgenin Alani >> " + e.AlanHesapla());
                     EskenarDortgenMenu();
                     break;
                 case 2:
@@ -236,8 +241,8 @@ namespace Kalitim
                     Console.Clear();//Bilgileri yazdirma
                     Console.WriteLine("---Eskenardortgen Bilgiler---");
                     e.OzellikYazdir();
-                    Console.WriteLine(e.getDolumu());
-                    Console.WriteLine(e.getSembol());
+                    Console.WriteLine("Doluluk Durumu >>" + e.getDolumu());
+                    Console.WriteLine("Sembolu >> " + e.getSembol());
                     Console.WriteLine();
                     EskenarDortgenMenu();
                     break;
@@ -316,8 +321,8 @@ namespace Kalitim
                     Console.Clear();//Bilgileri yazdirma
                     Console.WriteLine("---Ucgen Bilgiler---");
                     u.OzellikYazdir();
-                    Console.WriteLine(u.getDolumu());
-                    Console.WriteLine(u.getSembol());
+                    Console.WriteLine("Doluluk Durumu >> "+u.getDolumu());
+                    Console.WriteLine("Sembol >> " + u.getSembol());
                     Console.WriteLine();
                     UcgenMenu();
                     break;
@@ -405,8 +410,8 @@ namespace Kalitim
                     Console.Clear();//Bilgileri yazdirma
                     Console.WriteLine("---Dikdortgen Bilgiler---");
                     d.OzellikYazdir();
-                    Console.WriteLine(d.getDolumu());
-                    Console.WriteLine(d.getSembol());
+                    Console.WriteLine("Doluluk Durumu >>" + d.getDolumu());
+                    Console.WriteLine("Sembolu >> " + d.getSembol());
                     Console.WriteLine();
                     DikdortgenMenu();
                     break;
@@ -453,8 +458,8 @@ namespace Kalitim
             //----Dikdortgen icin----
             p.setSembol('*');
             p.setDoluMu(true);
-            p.setYukseklik(5);
-            p.setGenislik(5);
+            p.setYukseklik(8);
+            p.setGenislik(8);
             p.setYon(true);
         }
 
