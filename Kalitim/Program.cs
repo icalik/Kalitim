@@ -292,7 +292,7 @@ namespace Kalitim
                     break;
                 case 3:
                     Console.Clear();
-                    Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
+                    u.Ciz();
                     UcgenMenu();
                     break;
                 case 4:
