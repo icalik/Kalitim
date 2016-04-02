@@ -49,6 +49,52 @@ namespace Kalitim
 
         public override void Ciz()
         {
+            int arg1 = (int)Yukseklik;
+            int arg2 = (int)Genislik;
+            char ch = getSembol();
+            if (!getDolumu())
+            {
+                for (int row = 1; row <= arg1; row++)
+                {
+
+                    if (row == 1 || row == arg1)
+                    {
+                        for (int col = 1; col <= arg2; col++)
+                        {
+                            Console.Write(ch);
+                        }
+                        Console.WriteLine();
+                    }
+
+
+                    if (row < arg1 && row < arg1 - 1)
+                    {
+                        Console.Write(ch);
+                        for (int i = 0; i < arg2 - 2; i++)
+                        {
+                            Console.Write(" ");
+                        }
+                        Console.Write(ch);
+                        Console.WriteLine();
+                    }
+
+
+                }
+            }
+            else
+            {
+                for (int row = 1; row <= Yukseklik; row++)
+                {
+                    for (int i = 1; i <= Genislik; i++)
+                    {
+                        Console.Write(ch);
+                    }
+                    Console.WriteLine();
+                }
+
+
+            }
+            Console.ReadKey();
         }
 
         public override void OzellikYazdir()

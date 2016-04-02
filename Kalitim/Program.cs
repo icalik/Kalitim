@@ -373,7 +373,7 @@ namespace Kalitim
                     break;
                 case 3:
                     Console.Clear();
-                    Console.WriteLine("CIZ CALISACAK!"); //Sekil ciz
+                    d.Ciz();
                     DikdortgenMenu();
                     break;
                 case 4:
